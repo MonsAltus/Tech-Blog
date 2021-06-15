@@ -1,14 +1,16 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 
-// const withAuth = require('../utils/Auth');
-
-// Get all posts for homepage
-router.get('/', async (req,res) => {
+// Get all posts with their comments for homepage.
+router.get('/', async (req, res) => {
     try {
-        const postData = await Post.findAll()
-
-
+        const postData = await Post.findAll({
+            include: [
+                {model: User, attributes: ['name']},
+                {model: Comment, include: [{model: User, attributes: ['name']} ]}
+            ]
+        });
         const posts = postData.map((post) => post.get({ plain: true}));
 
         res.render('homepage', {
@@ -20,15 +22,49 @@ router.get('/', async (req,res) => {
     }
 });
 
+// Get one post and its comments by Id, requires user to be logged in.
+router.get('/post/:id', withAuth, async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                {model: User, attributes: ['name']},
+                {model: Comment, include: [{model: User, attributes: ['name']} ]}
+            ]
+        });
+        const post = postData.get({plain: true});
 
-// Get one post and comments by Id ---- (withAuth)
+        res.render('post', {
+            ...post,
+            loggedIn: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
+// Get all users posts for dashboard, requires user to be logged in.
+router.get('/dashboard', withAuth, async (req, res) => {
+    try{
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: {exclude: ['password']},
+            include: [
+                {model: User, attributes: ['name']},
+                {model: Comment, include: [{model: User, attributes: ['name']} ]}
+            ]
+        });
+        const user = userData.get({plain: true})
 
-// Get users posts for dashboard ---- (withAuth)
-
+        res.render('dashboard', {
+            ...user,
+            loggedIn: true
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 // Log in
-router.get('/login', (req,res) => {
+router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/');
         return;
