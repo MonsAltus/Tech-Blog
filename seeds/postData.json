@@ -1,0 +1,32 @@
+[
+    {
+        "title": "test title 1",
+        "content": "this is content for post 1",
+        "date_created": "06/12/2021",
+        "user_id": "3"
+    },
+    {
+        "title": "test title 2",
+        "content": "this is content for post 2",
+        "date_created": "06/13/2021",
+        "user_id": "4"
+    },
+    {
+        "title": "test title 3",
+        "content": "this is content for post 3",
+        "date_created": "06/13/2021",
+        "user_id": "5"
+    },
+    {
+        "title": "test title 4",
+        "content": "this is content for post 4",
+        "date_created": "06/14/2021",
+        "user_id": "1"
+    },
+    {
+        "title": "test title 5",
+        "content": "this is content for post 5",
+        "date_created": "06/15/2021",
+        "user_id": "2"
+    }
+]

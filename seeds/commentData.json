@@ -1,0 +1,32 @@
+[
+    {
+        "content": "Test comment for post 1",
+        "date_created": "06/13/2021",
+        "post_id": "1",
+        "user_id": "2"
+    },
+    {
+        "content": "Test comment for post 2",
+        "date_created": "06/13/2021",
+        "post_id": "2",
+        "user_id": "3"
+    },
+    {
+        "content": "Test comment for post 3",
+        "date_created": "06/14/2021",
+        "post_id": "3",
+        "user_id": "4"
+    },
+    {
+        "content": "Test comment for post 4",
+        "date_created": "06/14/2021",
+        "post_id": "4",
+        "user_id": "5"
+    },
+    {
+        "content": "Test comment for post 5",
+        "date_created": "06/15/2021",
+        "post_id": "5",
+        "user_id": "6"
+    }
+]
