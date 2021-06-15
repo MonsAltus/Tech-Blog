@@ -31,7 +31,7 @@ Post.init(
                 key: 'id'
             },
         },
-        // Need comments ref?
+        // Need comment ref?
     },
     {
         sequelize,
