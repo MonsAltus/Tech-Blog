@@ -21,7 +21,8 @@
 - SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
 ## Installation:
-
+<!-- mysql credentials stored in env -->
+<!-- session secret stored in env -->
 
 ## Usage:
 Image:<br>
