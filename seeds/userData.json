@@ -1,0 +1,32 @@
+[
+    {
+        "name": "AngryPufferfish",
+        "email": "Zoya@fakemail.com",
+        "password": "password123"
+    },
+    {
+        "name": "StaleCornbread",
+        "email": "Aurelia@fakemail.com",
+        "password": "password123"
+    },
+    {
+        "name": "LinearPepper",
+        "email": "Fred@fakemail.com",
+        "password": "password123"
+    },
+    {
+        "name": "PickledBluetooth",
+        "email": "Ashley@fakemail.com",
+        "password": "password123"
+    },
+    {
+        "name": "UnlikelyTurnstile",
+        "email": "Kirk@fakemail.com",
+        "password": "password123"
+    },
+    {
+        "name": "AmazingCaterpillar",
+        "email": "Carl@fakemail.com",
+        "password": "password123"
+    }
+]
