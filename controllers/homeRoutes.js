@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
         const postData = await Post.findAll({
             include: [
                 {model: User, attributes: ['name']},
-                {model: Comment, include: [{model: User, attributes: ['name']} ]}
+                {model: Comment, attributes: ['content', 'date_created', 'user_id']}
             ]
         });
         const posts = postData.map((post) => post.get({ plain: true}));
@@ -28,7 +28,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
         const postData = await Post.findByPk(req.params.id, {
             include: [
                 {model: User, attributes: ['name']},
-                {model: Comment, include: [{model: User, attributes: ['name']} ]}
+                {model: Comment, attributes: ['content', 'date_created', 'user_id']}
             ]
         });
         const post = postData.get({plain: true});
@@ -49,7 +49,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
             attributes: {exclude: ['password']},
             include: [
                 {model: User, attributes: ['name']},
-                {model: Comment, include: [{model: User, attributes: ['name']} ]}
+                {model: Comment, attributes: ['content', 'date_created', 'user_id']}
             ]
         });
         const user = userData.get({plain: true})
