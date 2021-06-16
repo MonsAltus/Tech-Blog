@@ -1,15 +1,17 @@
-<div class="text-center">
+<form class="text-center">
     <h2>{{title}}</h2>
     <p>{{content}}</p>
     <p>
         Author: {{user_id.name}} Posted on: {{format_date date_created}}
     </p>
     {{!-- Comment form --}}
-    <div class="form-group">
-        <label for="password-login">Add a comment:</label>
-        <input class="form-input" type="test" id="add-comment" />
-        <p>
-            <button class="btn btn-comment">Add comment.</button>
-        </p>
-    </div>
+    <form class="form add-comment-form"></form>
+        <div class="form-group">
+            <label for="password-login">Add a comment:</label>
+            <input class="form-input" type="test" id="add-comment" />
+            <p>
+                <button class="btn btn-comment">Add comment.</button>
+            </p>
+        </div>
+    </form>
 </div>
