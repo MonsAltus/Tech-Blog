@@ -1,7 +1,7 @@
 const deletePost = async (event) => { 
     event.preventDefault();
-    
-        const response = await fetch(`/api/posts/${post_id}`, {
+        const postId = event.target.getAttribute('post-id');
+        const response = await fetch(`/api/post/${postId}`, {
             method: 'DELETE'
         });
         if (response.ok) {
@@ -11,5 +11,5 @@ const deletePost = async (event) => {
         }
 };
 
-document.querySelector('.btn-deletePost')
+document.querySelector('.btn-deleteost')
 .addEventListener('click', deletePost);
