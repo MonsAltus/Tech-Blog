@@ -16,6 +16,9 @@
             Author: {{user.name}} Posted on: {{format_date user.post.date_created}}
         </p>
     </div>
+    <div>
+        <button class="btn btn-danger btn-deletePost" data-id="{{post.id}}">Delete Post</button>
+    </div>
 </div>
 {{/each}}
 
