@@ -15,7 +15,9 @@ const hbs = exphbs.create({ helpers });
 
 // Use env for secret key
 const sess = {
-    secret: process.env.SESS_SECRET,
+    // secret: process.env.SESS_SECRET,
+    // Testing with plaintext
+    secret: 'NjvaxCMjyms6aVtmH9NsAkfBngZ6rv',
     cookie: {},
     resave: false,
     saveUninitialized: true,
