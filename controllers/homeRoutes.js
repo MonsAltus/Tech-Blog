@@ -63,6 +63,15 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+// Add new post
+router.get('/addpost', (req, res) => {
+    if (!req.session.logged_in) {
+        res.redirect('/login');
+        return;
+    };
+    res.render('addpost');
+});
+
 // Log in
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {

@@ -1,7 +1,7 @@
 const deletePost = async (event) => { 
     event.preventDefault();
-        const postId = event.target.getAttribute('post-id');
-        const response = await fetch(`/api/post/${post_id}`, {
+    
+        const response = await fetch(`/api/posts/${post_id}`, {
             method: 'DELETE'
         });
         if (response.ok) {
