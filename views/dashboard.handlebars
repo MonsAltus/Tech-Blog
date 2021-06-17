@@ -1,5 +1,23 @@
 {{!-- Loop over each object in Post array--}}
-{{#each posts as |post| }}
+{{#each users as |user| }}
+
+
+<div class="row mb-4 project">
+    <div class="col-md-5">
+        <h2>
+        <a href="/post/{{user.post.id}}">{{user.post.title}}</a>
+        </h2>
+    </div>
+    <div class="col-md-7">
+        <p class="post-content">
+            {{user.post.content}}
+        </p>
+        <p>
+            Author: {{user.name}} Posted on: {{format_date user.post.date_created}}
+        </p>
+    </div>
+</div>
+{{/each}}
 
 
 <script src="./addPost.js"></script>

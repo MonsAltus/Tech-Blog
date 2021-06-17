@@ -1,14 +1,29 @@
-<form class="text-center">
-    <h2>{{title}}</h2>
+<div class="text-center">
+    {{!-- <h2>{{title}}</h2>
     <p>{{content}}</p>
     <p>
-        Author: {{user_id.name}} Posted on: {{format_date date_created}}
-    </p>
+        Author: {{user.name}} Posted on: {{format_date date_created}}
+    </p> --}}
+
+<div class="row mb-4 project">
+    <div class="col-md-5">
+        <h2>{{title}}</h2>
+    </div>
+    <div class="col-md-7">
+        <p class="post-content">
+            {{content}}
+        </p>
+        <p>
+            Author: {{user.name}} Posted on: {{format_date date_created}}
+        </p>
+    </div>
+</div>
+    
     {{!-- View comments --}}
 
 
     {{!-- Add comment form --}}
-    <form class="form add-comment-form"></form>
+    <form class="form add-comment-form">
         <div class="form-group">
             <label for="password-login">Add a comment:</label>
             <input class="form-input" type="test" id="add-comment" />
