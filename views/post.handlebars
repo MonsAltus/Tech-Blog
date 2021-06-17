@@ -14,9 +14,19 @@
     </div>
     
     {{!-- View comments --}}
+    <h4>Comments:</h4>
+    {{#each comments as |comment| }}
+    <div class="col-md-7">
+        <p class="post-content">
+            {{content}}
+        </p>
+        <p>
+            Author: {{user.name}} Posted on: {{format_date date_created}}
+        </p>
+    </h4>
 
-
-    {{!-- Add comment form --}}
+    {{!-- Add comment form if logged in--}}
+    {{#if logged_in}}
     <form class="form add-comment-form">
         <div class="form-group">
             <label for="password-login">Add a comment:</label>
@@ -26,6 +36,7 @@
             <button class="btn btn-comment" type="submit">Add comment.</button>
         </div>
     </form>
+    {{/if}}
 </div>
 
 <script src="./js/addComment.js"></script>
